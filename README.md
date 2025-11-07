@@ -42,7 +42,7 @@ API-сервис учёта инцидентов для UCAR<>TOPDOER
 2. Настройте базу данных PostgreSQL:
 - Создайте БД `incident_db`
 - Обновите строку подключения в `app/database.py`:
-  - `SQLALCHEMY_DATABASE_URL = "postgresql://username:password@localhost/incident_db"`
+  - `SQLALCHEMY_DATABASE_URL = "postgresql://postgres:Zxc983354@localhost:5432/incident_db?client_encoding=utf8"`
 3. Запустите сервер:
 - `uvicorn app.main:app --reload`
 
@@ -52,8 +52,3 @@ API-сервис учёта инцидентов для UCAR<>TOPDOER
 
 ## Порт запуска по умолчанию
 8000
-
-## Тестовые данные (опционально)
-
-- Запустите после первого старта приложения:
-  - `python -m app.init_data`
