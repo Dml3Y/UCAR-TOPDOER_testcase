@@ -26,7 +26,7 @@ API-сервис учёта инцидентов для UCAR<>TOPDOER
 ## Требования
 
 * Python 3.13.1
-* FastApi 0.104.1
+* FastApi 0.121.0
 * PostgreSQL 18.0
 
 ## Установка
@@ -42,7 +42,7 @@ API-сервис учёта инцидентов для UCAR<>TOPDOER
 2. Настройте базу данных PostgreSQL:
 - Создайте БД `incident_db`
 - Обновите строку подключения в `app/database.py`:
-  - `SQLALCHEMY_DATABASE_URL = "postgresql://postgres:Zxc983354@localhost:5432/incident_db?client_encoding=utf8"`
+  - `SQLALCHEMY_DATABASE_URL = "postgresql://username:password@host:port/database?client_encoding=utf8"`
 3. Запустите сервер:
 - `uvicorn app.main:app --reload`
 

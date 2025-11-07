@@ -10,7 +10,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="Incident API",
     description="API для учета инцидентов",
-    version="1.1.0"
+    version="1.1.1"
 )
 
 # Зависимость для получения сессии БД
