@@ -10,7 +10,7 @@ models.Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="Incident API",
     description="API для учета инцидентов",
-    version="1.1.1"
+    version="1.1.2"
 )
 
 # Зависимость для получения сессии БД
@@ -22,7 +22,7 @@ def get_db():
         db.close()
 
 
-@app.post("/incidents/", response_model=schemas.Incident)
+@app.post("/incidents", response_model=schemas.Incident)
 def create_incident(incident: schemas.IncidentCreate, db: Session = Depends(get_db)):
     """
     Создание нового инцидента
@@ -30,7 +30,7 @@ def create_incident(incident: schemas.IncidentCreate, db: Session = Depends(get_
     return crud.create_incident(db=db, incident=incident)
 
 
-@app.get("/incidents/", response_model=List[schemas.Incident])
+@app.get("/incidents", response_model=List[schemas.Incident])
 def read_incidents(
     status: Optional[str] = Query(None, description="Фильтр по статусу"),
     skip: int = 0,
